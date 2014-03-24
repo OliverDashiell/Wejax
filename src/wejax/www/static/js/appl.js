@@ -18,7 +18,7 @@ $(function(){
 	$('#ajax_btn').click(function(){
 		timestamp = new Date();
 		
-		$.get("/ajax", function(result){
+		$.get("/ajax", {v:timestamp.getTime(), msg:"Hello, jquery.get"}, function(result){
 			output(result);
 		});
 	});
@@ -26,6 +26,6 @@ $(function(){
 	$('#ws_btn').click(function(){
 		timestamp = new Date();
 		
-		ws.send("Hello, websocket");
+		ws.send("Hello, websockets");
 	});
 });
