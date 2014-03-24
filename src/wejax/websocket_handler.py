@@ -15,7 +15,7 @@ class WebsocketHandler(websocket.WebSocketHandler):
     def on_message(self, message):
         timestamp = time.time()
         self.write_message(u"You said: " + message)
-        logging.info("/websocket %0.2fms", time.time()-timestamp)
+        logging.info("/websocket %0.5fms", time.time()-timestamp)
 
     def on_close(self):
         print "WebSocket closed"
